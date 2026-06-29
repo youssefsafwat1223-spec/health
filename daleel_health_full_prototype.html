@@ -240,11 +240,39 @@
       place-items: center;
       align-content: center;
       gap: 3px;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 800;
+      line-height: 1.15;
+      min-width: 0;
+      padding: 4px 2px;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
     }
-    .tab-btn b { font-size: 18px; line-height: 1; }
-    .tab-btn.active { color: white; background: var(--primary); }
+    .tab-btn b {
+      width: 30px;
+      height: 30px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      line-height: 1;
+      background: var(--surface-2);
+      color: var(--muted);
+    }
+    .tab-btn span {
+      max-width: 100%;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+    .tab-btn.active {
+      color: white;
+      background: var(--primary);
+      transform: translateY(-10px);
+      box-shadow: 0 14px 28px rgba(15, 110, 86, .3);
+    }
+    .tab-btn.active b {
+      background: rgba(255,255,255,.18);
+      color: white;
+    }
 
     .top-row, .between, .row {
       display: flex;
@@ -409,6 +437,156 @@
     }
     .ad strong { display: block; line-height: 1.5; }
     .ad span { color: rgba(255,255,255,.78); font-size: 12px; }
+
+    .patient-sketch-home {
+      padding-top: 10px;
+    }
+    .patient-shortcuts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .patient-shortcut {
+      min-height: 54px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      gap: 2px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+    .patient-shortcut b { font-size: 18px; line-height: 1; }
+    .patient-hero {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--primary) 18%, transparent), transparent 55%),
+        var(--surface);
+      padding: 14px;
+    }
+    .patient-hero h2 { margin: 0; font-size: 22px; }
+    .patient-hero p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+    .patient-search-row {
+      display: grid;
+      grid-template-columns: 1fr 74px;
+      gap: 9px;
+      margin-top: 12px;
+    }
+    .patient-search-row .search { margin: 0; }
+    .barcode-tile {
+      min-height: 58px;
+      border: 1px dashed color-mix(in srgb, var(--primary) 60%, var(--line));
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--primary) 12%, transparent);
+      color: var(--primary-light);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      font-weight: 900;
+    }
+    .ai-card {
+      margin-top: 10px;
+      border: 0;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary), #22A884);
+      color: white;
+      min-height: 56px;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      text-align: right;
+    }
+    .ai-card b {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.16);
+      font-size: 18px;
+    }
+    .ai-card strong { display: block; font-size: 15px; line-height: 1.2; }
+    .ai-card span { display: block; color: rgba(255,255,255,.78); font-size: 11px; margin-top: 3px; }
+    .account-zone {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--surface-2);
+      padding: 34px 12px 12px;
+      margin-top: 28px;
+    }
+    .account-pill {
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 0;
+      border-radius: 16px;
+      background: var(--primary);
+      color: white;
+      min-width: 112px;
+      min-height: 48px;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 16px 34px rgba(15, 110, 86, .34);
+    }
+    .account-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 9px;
+    }
+    .account-service {
+      min-height: 72px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      gap: 5px;
+      padding: 7px 4px;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1.3;
+    }
+    .account-service b {
+      width: 30px;
+      height: 30px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: color-mix(in srgb, var(--primary) 16%, transparent);
+      color: var(--primary-light);
+      font-size: 13px;
+    }
+    .home-mini-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 12px;
+    }
+    .home-mini-card {
+      min-height: 66px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+      color: var(--text);
+      display: grid;
+      align-content: center;
+      gap: 2px;
+      padding: 10px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 11px;
+    }
+    .home-mini-card span { color: var(--muted); font-size: 10px; }
 
     .btn {
       min-height: 48px;
@@ -685,7 +863,7 @@
     ];
 
     const patientTabs = [
-      ["patientHome", "الرئيسية", "⌂"], ["doctorsList", "الأطباء", "ط"], ["pharmacy", "الصيدلية", "Rx"], ["health", "صحتي", "♡"], ["profile", "حسابي", "☻"]
+      ["chatList", "استشارات المريض", "☏"], ["favorites", "جهاتك", "♡"], ["patientHome", "الرئيسية", "⌂"], ["health", "حالتك", "▣"], ["settings", "إعدادات", "⚙"]
     ];
     const providerTabs = [
       ["providerDash", "الرئيسية", "⌂"], ["providerRequests", "الطلبات", "□"], ["chatList", "المحادثات", "◌"], ["rxGroup", "منشوراتي", "✎"], ["providerSettings", "الإعدادات", "⚙"]
@@ -718,7 +896,7 @@
 
       radiologyRegister: () => `<div class="screen" data-screen="radiologyRegister">${screenTop("تسجيل مركز الأشعة", "الأجهزة والخدمات والتقارير", "providerType")}<div class="form section"><input class="field" value="مركز النور للأشعة"><input class="field" value="أربيل - عنكاوا"><input class="field" value="رقم الإجازة: RAD-7719"><textarea>الأجهزة: CT، MRI، X-Ray، سونار، أشعة أسنان، فحص هشاشة</textarea><button class="btn ghost">رفع إجازة المركز</button><button class="btn ghost">تحديد الأجهزة المتاحة اليوم</button></div><button class="btn full section" data-go="radiologyProviderDash">إنشاء لوحة الأشعة</button></div>`,
 
-      patientHome: () => `<div class="screen" data-screen="patientHome"><div class="between"><div><p class="muted">أهلاً</p><h2 style="margin:0">أحمد</h2><p class="muted">📍 بغداد - الكرادة</p></div><div class="row">${iconButton("🛒", false, "cart")}${iconButton("🔔",true,"notifications")}</div></div>${search()}<div id="homeSkeleton" class="stack"><div class="card skeleton" style="height:86px"></div><div class="grid-4">${[1,2,3,4].map(()=>`<div class="card skeleton" style="height:68px"></div>`).join("")}</div></div><div id="homeContent" style="display:none"><button class="card between full" data-go="bookingConfirm"><span><strong>موعدك القادم</strong><p class="muted">د. محمد العامري - غداً 10:00 ص - حجز عيادة</p></span><span class="badge">مؤكد</span></button><div class="grid-4 section">${[["118/76","ضغط"],["102","سكر"],["78kg","وزن"],["72","نبض"]].map(x=>`<div class="card metric"><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join("")}</div><a class="ad section" data-go="booking"><strong>استشارة طبية مجانية مع أطباء الباطنية</strong><span>احجز الآن</span></a><section class="section"><div class="section-title"><h3>الخدمات</h3><button data-go="allServices">عرض الكل</button></div>${serviceGrid()}</section><section class="section"><div class="section-title"><h3>أطباء مميزون</h3><button data-go="doctorsList">عرض الكل</button></div><div class="stack">${doctors.slice(0,3).map(doctorCard).join("")}</div></section><section class="section stack"><div class="section-title"><h3>محتوى طبي</h3></div><button class="card" data-go="medicalContent"><strong>كيف تتابع ضغط الدم في المنزل؟</strong><p class="muted">قراءة صباحية ومسائية لمدة أسبوع تعطي صورة أدق.</p></button><button class="card" data-go="medicalContent"><strong>متى تحتاج تحليل السكر التراكمي؟</strong><p class="muted">ينصح به كل 3 أشهر لمرضى السكري أو حسب الطبيب.</p></button></section></div></div>`,
+      patientHome: () => `<div class="screen patient-sketch-home" data-screen="patientHome"><div class="patient-shortcuts"><button class="patient-shortcut" data-go="cart"><b>🛒</b><span>سلة سوق</span></button><button class="patient-shortcut" data-go="nearbyMap"><b>📍</b><span>موقع</span></button><button class="patient-shortcut" data-go="notifications"><b>🔔</b><span>إشعارات</span></button></div><div class="patient-hero"><div class="between"><div><h2>أهلاً أحمد</h2><p>بغداد - الكرادة | واجهة تطبيق المريض</p></div><span class="badge">مريض</span></div><div class="patient-search-row">${search("بحث عن طبيب، دواء، خدمة...", "smartSearch")}<button class="barcode-tile" data-go="barcodeScanner">▦</button></div><button class="ai-card" data-go="symptomSearch"><b>AI</b><span><strong>Chat With AI</strong><span>اسأل عن الأعراض أو الدواء بصياغة آمنة</span></span></button></div><div id="homeSkeleton" class="stack section"><div class="card skeleton" style="height:86px"></div><div class="grid-4">${[1,2,3,4].map(()=>`<div class="card skeleton" style="height:68px"></div>`).join("")}</div></div><div id="homeContent" style="display:none"><a class="ad section" data-go="booking"><strong>إعلان: استشارة طبية مجانية مع أطباء الباطنية</strong><span>احجز الآن أو تواصل مع الطبيب</span></a><section class="account-zone"><button class="account-pill" data-go="profile">حسابي</button><div class="account-grid">${[["طبيب","ط","doctorsList"],["صيدلية","Rx","pharmacy"],["مستشفى","H","allServices"],["مركز تخصصي","م","allServices"],["مختبر تحاليل","Lab","labs"],["أشعة وسونار","XR","radiology"],["عيادة بيطرية","V","allServices"],["عيادة مرضية","+","booking"],["الرضع والأطفال","B","milkWarehouse"],["كوزمتك ومكياج","C","pharmacy"],["مستلزمات طبية","+","pharmacy"],["محتوى طبي","ك","medicalContent"]].map(([n,i,go])=>`<button class="account-service" data-go="${go}"><b>${i}</b><span>${n}</span></button>`).join("")}</div></section><div class="home-mini-row"><button class="home-mini-card" data-go="bookingConfirm">موعد قريب<span>غداً 10:00 ص</span></button><button class="home-mini-card" data-go="health">ملفي الصحي<span>ضغط وسكر ووزن</span></button><button class="home-mini-card" data-go="favorites">محفوظاتي<span>أطباء وخدمات</span></button></div><section class="section"><div class="section-title"><h3>أطباء مميزون</h3><button data-go="doctorsList">عرض الكل</button></div><div class="stack">${doctors.slice(0,2).map(doctorCard).join("")}</div></section><section class="section stack"><div class="section-title"><h3>محتوى طبي</h3><button data-go="medicalContent">المكتبة</button></div><button class="card" data-go="medicalContent"><strong>كيف تتابع ضغط الدم في المنزل؟</strong><p class="muted">قراءة صباحية ومسائية لمدة أسبوع تعطي صورة أدق.</p></button></section></div></div>`,
 
       allServices: () => `<div class="screen" data-screen="allServices">${screenTop("كل الخدمات", "مصنفة حسب احتياجك")}${search("ابحث داخل الخدمات...")}<div class="stack section">${[["رعاية طبية","أطباء، مستشفيات، مراكز تخصصية، تمريض","doctorsList"],["تشخيص","مختبرات، أشعة وسونار","labs"],["منتجات","صيدلية، مستلزمات، بصريات، كوزمتك","pharmacy"],["عائلة وطفل","الرضع، مذخر الحليب، صحة الطفل","milkWarehouse"],["خريطة","مزودون بالقرب منك حسب الموقع","nearbyMap"],["أخرى","بيطرية، محتوى طبي","medicalContent"]].map(x=>`<button class="card between" data-go="${x[2]}"><span><strong>${x[0]}</strong><p class="muted">${x[1]}</p></span><span>‹</span></button>`).join("")}</div></div>`,
 
